@@ -18,22 +18,18 @@ public class DestroyOutOfBounds : MonoBehaviour
     {
         if (transform.position.x < horizontalBound)
         {
-            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         if (transform.position.x > -horizontalBound)
         {
-            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         if (transform.position.z < verticalBound)
         {
-            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
         if (transform.position.z > 20f)
         {
-            gameManager.AddLives(-1);
             Destroy(gameObject);
         }
     }
