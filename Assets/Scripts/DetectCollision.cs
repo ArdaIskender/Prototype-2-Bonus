@@ -24,6 +24,7 @@ public class DetectCollision : MonoBehaviour
         {
             gameManager.AddLives(-1);
             Destroy(gameObject);
+            
         }
         if (other.gameObject.tag == "Animal" && gameObject.tag == "Animal")
         {
@@ -33,6 +34,12 @@ public class DetectCollision : MonoBehaviour
         {
             other.GetComponent<AnimalHunger>().FeedAnimal(1);
             Destroy(gameObject);
+        }
+        if (other.gameObject.tag == "Farmer" && gameObject.tag == "Projectile")
+        {
+            gameManager.AddLives(-1);
+            Destroy(gameObject);
+            Destroy(other.gameObject);
         }
     }
 }
